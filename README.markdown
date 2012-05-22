@@ -51,11 +51,11 @@ And annoy your user with style:
 
 Both methods return a `Timer` object:
 
-    var nag = 3..seconds.repeat(function() {
+    var nag = 3..seconds().repeat(function() {
       alert("Set us as your homepage!");
     });
 
-    5..minutes.later(function() {
+    5..minutes().later(function() {
       nag.clear();
     });
 
