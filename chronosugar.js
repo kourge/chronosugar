@@ -7,6 +7,8 @@
   function day() { return this * 24 * 60 * 60 * 1000; }
   function month() { return this * 30 * 24 * 60 * 60 * 1000; }
   function year() { return this * 365 * 24 * 60 * 60 * 1000; }
+  function ago() { return new Date().valueOf() - this; }
+  function toDate() { return new Date(this); }
 
   function Timer(id, clearFunction) {
     return {id: id, clear: function clear() { clearFunction(this.id); }};
@@ -23,6 +25,8 @@
   np.years = np.year = year;
   np.after = after;
   np.repeat = repeat;
+  np.ago = ago;
+  np.toDate = toDate;
 })(
   Number.prototype, setTimeout, clearTimeout, setInterval, clearInterval
 );

@@ -28,6 +28,18 @@ The following unit methods are added to `Number.prototype`:
 Their singular equivalents are aliased as expected; `1..minute()` works just
 fine.
 
+Going back
+----------
+
+The `ago` method yields a JavaScript timestamp in the past, whereas the
+`toDate` method on a Number returns a `Date`, assuming said `Number` is a
+JavaScript timestamp.
+
+    >>> new Date()
+    Date {Fri Jun 01 2012 20:05:21 GMT-0700 (Pacific Daylight Time)}
+    >>> 2..minutes().ago().toDate()
+    Date {Fri Jun 01 2012 20:03:21 GMT-0700 (Pacific Daylight Time)}
+
 Timers
 ------
 
